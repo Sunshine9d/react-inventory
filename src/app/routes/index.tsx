@@ -1,16 +1,16 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute.tsx";
-import MainLayout from "@/layouts/MainLayout";
-import AuthLayout from "@/layouts/AuthLayout";
+import MainLayout from "@layouts/MainLayout";
+import AuthLayout from "@layouts/AuthLayout";
 
 // Lazy-loaded pages (for better performance)
-const Dashboard = lazy(() => import("@/pages/dashboard/Dashboard"));
-const InventoryList = lazy(() => import("@/pages/inventory/InventoryList"));
-const OrderList = lazy(() => import("@/pages/orders/OrderList"));
-const Login = lazy(() => import("@/pages/auth/Login"));
-const Register = lazy(() => import("@/pages/auth/Register"));
-const NotFound = lazy(() => import("@/pages/NotFound"));
+const Dashboard = lazy(() => import("@pages/dashboard/Dashboard"));
+const InventoryList = lazy(() => import("@pages/inventory/InventoryList"));
+const OrderList = lazy(() => import("@pages/orders/OrderList"));
+const Login = lazy(() => import("@pages/auth/Login"));
+const Register = lazy(() => import("@pages/auth/Register"));
+const NotFound = lazy(() => import("@pages/shared/NotFound"))
 
 const AppRoutes = () => {
     return (
@@ -27,6 +27,7 @@ const AppRoutes = () => {
                     <Route element={<ProtectedRoute />}>
                         <Route element={<MainLayout />}>
                             <Route path="/" element={<Dashboard />} />
+                            <Route path="/dashboard" element={<Dashboard />} />
                             <Route
                                 path="/inventory"
                                 element={<InventoryList />}

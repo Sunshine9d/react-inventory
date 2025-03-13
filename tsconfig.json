@@ -7,6 +7,7 @@
     "compilerOptions": {
         "baseUrl": "src",
         "paths": {
+            "@/*": ["*"],  // ✅ Add this line to support "@/layouts/MainLayout"
             "@app/*": ["app/*"],
             "@components/*": ["components/*"],
             "@hooks/*": ["hooks/*"],
