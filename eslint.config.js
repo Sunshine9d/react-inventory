@@ -1,11 +1,5 @@
 import path from "path";
 import { fileURLToPath } from "url";
-import tseslint from "@typescript-eslint/eslint-plugin";
-import tsparser from "@typescript-eslint/parser";
-import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import importPlugin from "eslint-plugin-import";
-import prettier from "eslint-plugin-prettier";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

@@ -11,6 +11,7 @@ const OrderList = lazy(() => import("@pages/orders/OrderList"));
 const Login = lazy(() => import("@pages/auth/Login"));
 const Register = lazy(() => import("@pages/auth/Register"));
 const NotFound = lazy(() => import("@pages/shared/NotFound"))
+const ProductList = lazy(() => import("@pages/products/ProductList"))
 
 const AppRoutes = () => {
     return (
@@ -33,6 +34,7 @@ const AppRoutes = () => {
                                 element={<InventoryList />}
                             />
                             <Route path="/orders" element={<OrderList />} />
+                            <Route path="/products" element={<ProductList />} />
                         </Route>
                     </Route>
 

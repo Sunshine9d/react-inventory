@@ -2,8 +2,9 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
+import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(),tsconfigPaths()],
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "src"),
@@ -16,7 +17,7 @@ export default defineConfig({
             "@styles": path.resolve(__dirname, "src/styles"),
             "@utils": path.resolve(__dirname, "src/utils"),
             "@services": path.resolve(__dirname, "src/services"),
-            "@config": path.resolve(__dirname, "config"),
+            "@config": path.resolve(__dirname, "src/config"),
         },
     },
 });
